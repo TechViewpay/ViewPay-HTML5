@@ -264,8 +264,8 @@ postcode:75018,
 Tous les champs ne sont pas obligatoires. Les valeurs par défaut de ces champs sont donc vides. 
 
 | Paramètres |      Exemple      |  Description |
-|----------|:-------------:|:-------:|
-| codeCategory (int) | 1 | Représente la catégorie d’articles que l’utilisateur souhaite débloquer:<br> 0 : News,<br> 1 : Sports,<br> 2 : Economy,<br> 3 : Politics,<br> 4 : Environment,<br> 5 : Science,<br> 6 : Technology,<br> 7 : Others |
+|----------|:-------------:|-------|
+| codeCategory (int) | 1 | Représente la catégorie d’articles <br>que l’utilisateur souhaite débloquer:<br> 0 : News,<br> 1 : Sports,<br> 2 : Economy,<br> 3 : Politics,<br> 4 : Environment,<br> 5 : Science,<br> 6 : Technology,<br> 7 : Others |
 | age (int) | 35 | Age de l'utilisateur |
 | gender (char) | M | Sexe de l'utilisateur. Valeurs possibles 'M' ou 'F' |
 | country (char) | FR | Code pays de l'utilisateur |
