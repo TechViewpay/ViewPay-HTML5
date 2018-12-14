@@ -176,10 +176,13 @@ IMPORTANT : Afin que la transaction ait bien lieu, notre serveur attend de recev
 Voici trois boutons d’appel à ViewPay que nous vous mettons à disposition pour respecter la charte Viewpay:
 
 Presse Blanc : http://cdn.jokerly.com/images/logosVP/Bouton_carre_blanc_press.png
+![sample](https://cdn.jokerly.com/images/logosVP/Bouton_carre_blanc_press.png?raw=true)
 
 Presse Bleu : http://cdn.jokerly.com/images/logosVP/Bouton_carre_bleu_press.png
+![sample](https://cdn.jokerly.com/images/logosVP/Bouton_carre_bleu_press.png?raw=true)
 
 Presse Bleu arrondi « Je » : http://cdn.jokerly.com/images/logosVP/Bouton_arrondi_bleu_presse_je.png
+![sample](https://cdn.jokerly.com/images/logosVP/Bouton_arrondi_bleu_presse_je.png?raw=true)
 
 
 Nous conseillons d’adapter le wording au mieux par rapport au wording de l’autre alternative proposée en face de ViewPay dans votre paywall. 
@@ -188,6 +191,7 @@ N’hésitez pas à nous contacter pour adapter notre bouton à vos spécificit�
 
 ## Fond noir
 Nous conseillons fortement d’ajouter un fond sombre autour du système Viewpay,  qui permet d’optimiser l’expérience utilisateur. Voici un exemple du rendu:  
+![sample](https://cdn.jokerly.com/images/logosVP/exemple_fondnoir.png?raw=true)
 
 
 Pour ce faire, il faut faire apparaître le fond au même moment que l'AdSelector ViewPay en l’ajoutant ainsi dans la fonction VPloadAds : 
