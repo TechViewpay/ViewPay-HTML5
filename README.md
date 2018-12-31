@@ -28,14 +28,14 @@ Ajoutez un div avec l’id “cadreJokerlyADS” dans votre page.
 Le design CSS est généré automatiquement lors de l’initialisation de Viewpay, ainsi vous n’êtes pas obligés de rajouter du CSS. Cependant, si vous devez changer le design, votre CSS sera pris en priorité. Nous imposons 650x450 pour du desktop et de centrer horizontalement et verticalement le div.
 ```html
 #cadreJokerlyADS{
-margin: auto;
-top: 0;
-right: 0;
-left: 0;
-position: fixed;
-bottom: 0;
-width: 650px !important;
-height: 450px !important;
+	margin: auto;
+	top: 0;
+	right: 0;
+	left: 0;
+	position: fixed;
+	bottom: 0;
+	width: 650px !important;
+	height: 450px !important;
 }
 ```
 
@@ -48,19 +48,19 @@ Les balises média suivantes seront à ajouter à votre page CSS pour permettre 
 ```css
 //Dans votre fichier CSS
 @media screen and (max-width: 600px){
-#cadreJokerlyADS{
-width:100% !important;
-height:100% !important;
-margin-top:0;
-}
+	#cadreJokerlyADS{
+	width:100% !important;
+	height:100% !important;
+	margin-top:0;
+	}
 }
 @media screen and ((min-width: 601px) and (max-width: 1024px)){
-#cadreJokerlyADS{
-width:100% !important;
-height:100% !important;
-margin-top:0;
-margin-left:0;
-}
+	#cadreJokerlyADS{
+	width:100% !important;
+	height:100% !important;
+	margin-top:0;
+	margin-left:0;
+	}
 }
 
 /* Il est arrivé que chez certains éditeurs l’ajout de “!important” soit nécessaire afin que le format mobile soit effectivement activé. */
@@ -89,12 +89,12 @@ Voici le code à intégrer dans une balise script :
 <script> 
 		function VPinit(){
 			JKFBASQ.init({
-					site_id: 'b23d3f0235ae89e4', // id de démo
-          load_callback : VPexistAds,
-					noads_callback : VPnoAds,
-					complete_callback : VPcompleteAds,
-					close_callback : VPcloseAds,
-					play_callback : VPplayAds,
+				site_id: 'b23d3f0235ae89e4', // id de démo
+				load_callback : VPexistAds,
+				noads_callback : VPnoAds,
+				complete_callback : VPcompleteAds,
+				close_callback : VPcloseAds,
+				play_callback : VPplayAds,
 			});
 		}
 		
@@ -112,7 +112,7 @@ Voici le code à intégrer dans une balise script :
 		}
 		function VPcompleteAds(){
 			alert("completeAds");
-/*Une fois la pub finie, le code permettant de débloquer l’article doit se situer ici*/
+			/*Une fois la pub finie, le code permettant de débloquer l’article doit se situer ici*/
 		}
 		function VPcloseAds(){
 			alert("closeAds");
