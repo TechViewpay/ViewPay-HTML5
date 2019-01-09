@@ -36,7 +36,12 @@ Le design CSS est généré automatiquement lors de l’initialisation de Viewpa
 	bottom: 0;
 	width: 650px !important;
 	height: 450px !important;
+	z-index:999999 !important;
 }
+
+Le z-index est nécessaire à la visibilité de la publicité. Merci de le monter si nécessaire si une frame/bannière/autre est au dessus du notre.
+Ceci est obligatoire afin de garantir de CPM élevé
+
 ```
 
 Pour les sites Mobiles/Tablettes : exploiter le responsive 
