@@ -19,13 +19,15 @@ Le fichier jkFbASQ.js est le seul fichier qui doit être chargé dans la page qu
 NB: Il faut placer le script le plus haut possible dans la page afin d’optimiser son temps de chargement.
 
 
-## Création du div pour acceuillir ViewPay
+## Création d’un div pour accueillir la publicité
 Ajoutez un div avec l’id “cadreJokerlyADS” dans votre page. 
 ```html
 <div id="cadreJokerlyADS"></div>
 ```
 
-Le design CSS est généré automatiquement lors de l’initialisation de Viewpay, ainsi vous n’êtes pas obligés de rajouter du CSS. Cependant, si vous devez changer le design, votre CSS sera pris en priorité. Nous imposons 650x450 pour du desktop et de centrer horizontalement et verticalement le div.
+Le design CSS est généré automatiquement lors de l’initialisation de Viewpay, ainsi vous n’êtes pas obligés de rajouter du CSS. Cependant, si vous devez changer le design, votre CSS sera pris en priorité. Pour ceci, donnez à ce div les dimensions que vous souhaitez attribuer à Viewpay, en veillant à conserver un ratio largeur/hauteur de 1,44.
+Nous imposons 650x450 pour du desktop et de le centrer horizontalement et verticalement.
+
 ```html
 #cadreJokerlyADS{
 	margin: auto;
@@ -40,7 +42,7 @@ Le design CSS est généré automatiquement lors de l’initialisation de Viewpa
 }
 
 Le z-index est nécessaire à la visibilité de la publicité. Merci de le monter si nécessaire si une frame/bannière/autre est au dessus du notre.
-Ceci est obligatoire afin de garantir de CPM élevé
+Ceci est obligatoire afin de garantir de CPM élevé.
 
 ```
 
@@ -71,15 +73,15 @@ Les balises média suivantes seront à ajouter à votre page CSS pour permettre 
 /* Il est arrivé que chez certains éditeurs l’ajout de “!important” soit nécessaire afin que le format mobile soit effectivement activé. */
 ```
 
-## Initialisation de ViewPay
+## Définition des fonctions et callbacks JavaScript
 
 Les fonctions et callbacks fournis par Viewpay sont les suivants : 
 
-fonctions : 
+Fonctions : 
 VPinit() - appelée typiquement au onload d’une page pour vérifier la disponibilité d’une publicité. Cette fonction appelle le callback VPexistAds() si une ou plusieurs vidéos ont été trouvées, et appelle le callback VPnoAds() si aucune n’a été trouvée pour cet utilisateur.
 VPloadAds() - appelée une fois que vous avez eu la confirmation qu’une pub existe (via le callback VPexistAds()). Permet d’ouvrir le système Viewpay.
 
-callbacks :
+Callbacks :
 VPexistAds() - callback appelé si Viewpay a au moins une publicité à servir. Cette fonction vous permet d’afficher le bouton pour lancer Viewpay si vous recevez un OK. Si KO le callback VPnoAds() est appelé.
 VPnoAds() - callback appelé si Viewpay n’a aucune publicité à servir.
 VPplayAds() - callback de notification appelé lorsque l’utilisateur démarre la vidéo.
@@ -94,7 +96,7 @@ Voici le code à intégrer dans une balise script :
 <script> 
 		function VPinit(){
 			JKFBASQ.init({
-				site_id: 'b23d3f0235ae89e4', // id de démo
+				site_id: 'b23d3f0235ae89e4', // id de démo fonctionnel
 				load_callback : VPexistAds,
 				noads_callback : VPnoAds,
 				complete_callback : VPcompleteAds,
@@ -207,7 +209,7 @@ document.getElementById("modal").style.display = 'block';
 JKFBASQ.loadAds();
 }
 ```
-Avec le mot "modal" représentant l'Id de la div possédant le code CSS suivant, nous conseillons de fixer l’opacité de background-color à 0.9 afin d’assurer aux annonceurs une visibilité optimale de leurs vidéos : 
+Avec le mot "VPmodal" représentant l'Id de la div possédant le code CSS suivant, nous conseillons de fixer l’opacité de background-color à 0.9 afin d’assurer aux annonceurs une visibilité optimale de leurs vidéos : 
 ```css
 #VPmodal{
     width: 100%;
