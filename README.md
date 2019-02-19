@@ -41,7 +41,7 @@ Nous imposons 650x450 pour du desktop et de le centrer horizontalement et vertic
 	z-index:999999 !important;
 }
 
-Le z-index est nécessaire à la visibilité de la publicité. Merci de le monter si nécessaire si une frame/bannière/autre est au dessus du notre.
+Le z-index est nécessaire à la visibilité de la publicité. Il est impératif de le monter si nécessaire si une frame/bannière/autre est au dessus du nôtre.
 Ceci est obligatoire afin de garantir de CPM élevé.
 
 ```
