@@ -92,7 +92,7 @@ ViewPay est une solution qui répond aux appels reçus avec agilité et rapidit�
 
 Voici le code à intégrer dans une balise script : 
 ```html
-<script>
+
 <script> 
 		function VPinit(){
 			JKFBASQ.init({
@@ -106,11 +106,11 @@ Voici le code à intégrer dans une balise script :
 		}
 		
 		function VPexistAds(){
-			alert(“existAds”);
+			alert("existAds");
 			$("#btnShowViewpay").css("display","block");
 		}
 		function VPloadAds(){
-			alert(”loadAds”);
+			alert("loadAds");
 			JKFBASQ.loadAds();
 		}
 		function VPnoAds(){
