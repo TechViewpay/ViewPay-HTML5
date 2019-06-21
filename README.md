@@ -20,7 +20,7 @@ NB: Il faut placer le script le plus haut possible dans la page afin d’optimis
 
 
 ## Création d’un div pour accueillir la publicité
-Ajoutez un div avec l’id “cadreJokerlyADS” dans votre page. 
+Ajoutez un div avec l’id "cadreJokerlyADS" dans votre page. 
 ```html
 <div id="cadreJokerlyADS"></div>
 ```
@@ -94,40 +94,40 @@ Voici le code à intégrer dans une balise script :
 ```html
 
 <script> 
-		function VPinit(){
-			JKFBASQ.init({
-				site_id: 'b23d3f0235ae89e4', // id de démo fonctionnel
-				load_callback : VPexistAds,
-				noads_callback : VPnoAds,
-				complete_callback : VPcompleteAds,
-				close_callback : VPcloseAds,
-				play_callback : VPplayAds,
-			});
-		}
+	function VPinit(){
+		JKFBASQ.init({
+			site_id: 'b23d3f0235ae89e4', // id de démo fonctionnel
+			load_callback : VPexistAds,
+			noads_callback : VPnoAds,
+			complete_callback : VPcompleteAds,
+			close_callback : VPcloseAds,
+			play_callback : VPplayAds,
+		});
+	}
 		
-		function VPexistAds(){
-			alert("existAds");
-			$("#btnShowViewpay").css("display","block");
-		}
-		function VPloadAds(){
-			alert("loadAds");
-			JKFBASQ.loadAds();
-		}
-		function VPnoAds(){
-			$("#btnShowViewpay").css("display","none");
-			alert("noAds");
-		}
-		function VPcompleteAds(){
-			alert("completeAds");
-			/*Une fois la pub finie, le code permettant de débloquer l’article doit se situer ici*/
-		}
-		function VPcloseAds(){
-			alert("closeAds");
-		}
-		function VPplayAds(){
-			alert(“playAds”);
-		}
-	</script>
+	function VPexistAds(){
+		alert("existAds");
+		$("#btnShowViewpay").css("display","block");
+	}
+	function VPloadAds(){
+		alert("loadAds");
+		JKFBASQ.loadAds();
+	}
+	function VPnoAds(){
+		$("#btnShowViewpay").css("display","none");
+		alert("noAds");
+	}
+	function VPcompleteAds(){
+		alert("completeAds");
+		/*Une fois la pub finie, le code permettant de débloquer l’article doit se situer ici*/
+	}
+	function VPcloseAds(){
+		alert("closeAds");
+	}
+	function VPplayAds(){
+		alert(“playAds”);
+	}
+</script>
  ```
 
 Pour débloquer l’article, insérez dans le VPcompleteAds(), votre fonction/code permettant de débloquer l’article.
@@ -136,7 +136,7 @@ NB: La fonction VPinit(), que vous avez configurée avec votre identifiant Viewp
 
 Exemple : 
 ```html
-<body onload=”VPinit()”>
+<body onload="VPinit()">
 ...
 </body>
 ```
@@ -163,15 +163,21 @@ Exemple :
 ```javascript
 // Dans l’init :
 JKFBASQ.init({
-site_id: 'your_id',
-load_callback:existAds,
-noads_callback: noAds,
-complete_callback:completeAds,
-close_callback:closeAds,
-play_callback : play,
-codeCategory:1,
-secureId : '012345aze',
-userInfo : {age:35,gender:'M',country:'FR',language:'fr',postcode:75018}
+	site_id: 'your_id',
+	load_callback:existAds,
+	noads_callback: noAds,
+	complete_callback:completeAds,
+	close_callback:closeAds,
+	play_callback : play,
+	codeCategory:1,
+	secureId : '012345aze',
+	userInfo : {
+		age:35,
+		gender:'M',
+		country:'FR',
+		language:'fr',
+		postcode:75018
+	}
 });
 
 // Ce que vous recevrez dans le callback : 
@@ -183,13 +189,13 @@ IMPORTANT : Afin que la transaction ait bien lieu, notre serveur attend de recev
 Voici trois boutons d’appel à ViewPay que nous vous mettons à disposition pour respecter la charte Viewpay:
 
 Presse Blanc : http://cdn.jokerly.com/images/logosVP/Bouton_carre_blanc_press.png
-![sample](https://cdn.jokerly.com/images/logosVP/Bouton_carre_blanc_press.png?raw=true)
+![sample](https://cdn.jokerly.com/images/logosVP/Bouton_carre_blanc_press.png)
 
 Presse Bleu : http://cdn.jokerly.com/images/logosVP/Bouton_carre_bleu_press.png
-![sample](https://cdn.jokerly.com/images/logosVP/Bouton_carre_bleu_press.png?raw=true)
+![sample](https://cdn.jokerly.com/images/logosVP/Bouton_carre_bleu_press.png)
 
 Presse Bleu arrondi « Je » : http://cdn.jokerly.com/images/logosVP/Bouton_arrondi_bleu_presse_je.png
-![sample](https://cdn.jokerly.com/images/logosVP/Bouton_arrondi_bleu_presse_je.png?raw=true)
+![sample](https://cdn.jokerly.com/images/logosVP/Bouton_arrondi_bleu_presse_je.png)
 
 
 Nous conseillons d’adapter le wording au mieux par rapport au wording de l’autre alternative proposée en face de ViewPay dans votre paywall. 
@@ -198,15 +204,15 @@ N’hésitez pas à nous contacter pour adapter notre bouton à vos spécificit�
 
 ## Fond noir
 Nous conseillons fortement d’ajouter un fond sombre autour du système Viewpay,  qui permet d’optimiser l’expérience utilisateur. Voici un exemple du rendu:  
-![sample](https://cdn.jokerly.com/images/logosVP/exemple_fondnoir.png?raw=true)
+![sample](https://cdn.jokerly.com/images/logosVP/exemple_fondnoir.png)
 
 
 Pour ce faire, il faut faire apparaître le fond au même moment que l'AdSelector ViewPay en l’ajoutant ainsi dans la fonction VPloadAds : 
 
 ```javascript
 function VPloadAds(){
-document.getElementById("modal").style.display = 'block';
-JKFBASQ.loadAds();
+	document.getElementById("modal").style.display = 'block';
+	JKFBASQ.loadAds();
 }
 ```
 Avec le mot "VPmodal" représentant l'Id de la div possédant le code CSS suivant, nous conseillons de fixer l’opacité de background-color à 0.9 afin d’assurer aux annonceurs une visibilité optimale de leurs vidéos : 
@@ -252,24 +258,24 @@ Il est possible (et très souhaitable) de transmettre à ViewPay des information
 Discutons ensemble du champ des possibles au moment de démarrer l’intégration!
 
 ```js
-		function VPinit(){
-			JKFBASQ.init({
-					site_id: 'b23d3f0235ae89e4', // id de démo	
-					load_callback : VPexistAds,
-					noads_callback : VPnoAds,
-					complete_callback : VPcompleteAds,
-					close_callback : VPcloseAds,
-					play_callback : VPplayAds,
-codeCategory:1
+function VPinit(){
+	JKFBASQ.init({
+		site_id: 'b23d3f0235ae89e4', // id de démo	
+		load_callback : VPexistAds,
+		noads_callback : VPnoAds,
+		complete_callback : VPcompleteAds,
+		close_callback : VPcloseAds,
+		play_callback : VPplayAds,
+		codeCategory:1
 		userInfo : {
-age:35,
-gender:'M',
-country:'FR',
-language:'fr',
-postcode:75018,
-}
-			});
+			age:35,
+			gender:'M',
+			country:'FR',
+			language:'fr',
+			postcode:75018,
 		}
+	});
+}
 ```
 
 Tous les champs ne sont pas obligatoires. Les valeurs par défaut de ces champs sont donc vides. 
