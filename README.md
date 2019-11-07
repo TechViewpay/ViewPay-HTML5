@@ -164,11 +164,11 @@ Exemple :
 // Dans l’init :
 JKFBASQ.init({
 	site_id: 'your_id',
-	load_callback:existAds,
-	noads_callback: noAds,
-	complete_callback:completeAds,
-	close_callback:closeAds,
-	play_callback : play,
+	load_callback: VPexistAds,
+	noads_callback: VPnoAds,
+	complete_callback: VPcompleteAds,
+	close_callback: VPcloseAds,
+	play_callback : VPplay,
 	codeCategory:1,
 	secureId : '012345aze',
 	userInfo : {
@@ -201,6 +201,9 @@ Presse Bleu arrondi « Je » : http://cdn.jokerly.com/images/logosVP/Bouton_arro
 Nous conseillons d’adapter le wording au mieux par rapport au wording de l’autre alternative proposée en face de ViewPay dans votre paywall. 
 Ainsi, si l’autre alternative est “je m’inscris” alors notre bouton devra également utiliser le “je” : “J’accède à cet article”...
 N’hésitez pas à nous contacter pour adapter notre bouton à vos spécificités.
+
+Une fois le bouton chargé via la fonction VPexistAds(), il faudra appeler une URL d'un pixel de comptage du style pro.jokerly.com/Okidak/trackView.htm?id=XXX
+Celle-ci vous sera fourni par votre contact ViewPay.
 
 ## Fond noir
 Nous conseillons fortement d’ajouter un fond sombre autour du système Viewpay,  qui permet d’optimiser l’expérience utilisateur. Voici un exemple du rendu:  
