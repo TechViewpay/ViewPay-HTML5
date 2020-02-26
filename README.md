@@ -222,8 +222,8 @@ Techniquement parlant nous aurons alors deux boutons, un disponible dès le déb
 
 Voici comment faire :
 ```html
-<button id="btnchargement" style="display:block; background-color:grey; "></button>
-<button id="btnShowViewpay" style="display:none; background-color:green;" onclick="VPloadAds()"></button>
+<button id="btnchargement" style="display:block; background-color:grey; ">Nous recherchons des publicités pour vous</button>
+<button id="btnShowViewpay" style="display:none; background-color:green;" onclick="VPloadAds()">Accédez à cet article en regardant une publicité</button>
 ```
 Le CSS des deux boutons sont à réadapter en fonction des différentes chartes graphiques.
 
