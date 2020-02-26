@@ -38,7 +38,7 @@ Nous imposons 650x450 pour du desktop et de le centrer horizontalement et vertic
 	bottom: 0;
 	width: 650px !important;
 	height: 450px !important;
-	z-index:999999 !important;
+	z-index:9999999 !important;
 }
 
 Le z-index est nécessaire à la visibilité de la publicité. Il est impératif de le monter si nécessaire si une frame/bannière/autre est au dessus du nôtre.
@@ -205,6 +205,43 @@ N’hésitez pas à nous contacter pour adapter notre bouton à vos spécificit�
 Une fois le bouton chargé via la fonction VPexistAds(), il faudra appeler une URL d'un pixel de comptage du style pro.jokerly.com/Okidak/trackView.htm?id=XXX
 Celle-ci vous sera fourni par votre contact ViewPay.
 
+Une nouvelle optique a été confirmé comme étant plus efficace et apportant une meilleure expérience utilisateur : un bouton d'appel à ViewPay qui se charge en attendant la vérification des publicité.
+La logique est la suivante :
+- Le bouton d'appel à ViewPay est grisé et non actif.
+- On vérifie s'il y a des publicités, 
+	- Si Oui
+		- Le bouton devient activable
+		- Le bouton est visuellement disponible
+	- Si Non
+		- Le bouton disparaît
+
+Techniquement parlant nous aurons alors deux boutons, un caché avec la fonction VPloadAds permettant de lancer les pubs, et un disponible dès le début sans utilisation.
+
+Voici comment faire :
+```html
+<button id="btnchargement" style="display:block; color:grey; "></button>
+<button id="btnShowViewpay" style="display:none; color:green;" onclick="VPloadAds()"></button>
+```
+
+Nous avons ainsi nos deux boutons. Il faut désormais les faire interagir en fonction des publicités.
+```javascript
+	function VPexistAds(){
+		alert("existAds");
+		$("#btnchargement").css("display","none");
+		$("#btnShowViewpay").css("display","block");
+	}
+```	
+
+```javascript
+	function VPnoAds(){
+		$("#buttonchargement").css("display","none");
+		alert("noAds");
+	}
+```
+
+Le CSS des deux boutons sont à réadapter en fonction des différentes chartes graphiques.
+N'hésitez pas à contacter VieWwPay afin de trouver la meilleur solution.
+
 ## Fond noir
 Nous conseillons fortement d’ajouter un fond sombre autour du système Viewpay,  qui permet d’optimiser l’expérience utilisateur. Voici un exemple du rendu:  
 ![sample](https://cdn.jokerly.com/images/logosVP/exemple_fondnoir.png)
@@ -248,8 +285,8 @@ function VPcloseAds(){
 Pour finir, la div #cadreJokerlyAds doit être positionnée à l’intérieur de la div #modal:
 
 ```html
-<div id=”modal”>
-<div id="cadreJokerlyADS" style=”width:650px;height:450px;”></div>
+<div id="modal">
+	<div id="cadreJokerlyADS" style=”width:650px;height:450px;”></div>
 </div>
 ```
 
