@@ -28,7 +28,7 @@ Ajoutez un div avec l’id "cadreJokerlyADS" dans votre page.
 Le design CSS est généré automatiquement lors de l’initialisation de Viewpay, ainsi vous n’êtes pas obligés de rajouter du CSS. Cependant, si vous devez changer le design, votre CSS sera pris en priorité. Pour ceci, donnez à ce div les dimensions que vous souhaitez attribuer à Viewpay, en veillant à conserver un ratio largeur/hauteur de 1,44.
 Nous imposons 650x450 pour du desktop et de le centrer horizontalement et verticalement.
 
-```html
+```css
 #cadreJokerlyADS{
 	margin: auto;
 	top: 0;
