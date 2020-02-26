@@ -225,7 +225,7 @@ Voici comment faire :
 <button id="btnchargement" style="display:block; background-color:grey; ">Nous recherchons des publicités pour vous</button>
 <button id="btnShowViewpay" style="display:none; background-color:green;" onclick="VPloadAds()">Accédez à cet article en regardant une publicité</button>
 ```
-Le CSS des deux boutons sont à réadapter en fonction des différentes chartes graphiques.
+Le CSS, le wording et les div concernées sont à réadapter en fonction des différentes chartes graphiques et intégration.
 
 Nous avons ainsi nos deux boutons. Il faut désormais les faire interagir en fonction des publicités.
 
@@ -243,6 +243,8 @@ function VPnoAds(){
 	alert("noAds");
 }
 ```
+
+Il peut être nécessaire de cacher également ce qui entoure le bouton, par exemple : un wording situé au dessus, une séparation entre les deux boutons etc...
 
 ## Fond noir
 Nous conseillons fortement d’ajouter un fond sombre autour du système Viewpay,  qui permet d’optimiser l’expérience utilisateur. Voici un exemple du rendu:  
