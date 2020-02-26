@@ -218,7 +218,7 @@ La logique est la suivante :
 	- Si Non
 		- Le bouton disparaît
 
-Techniquement parlant nous aurons alors deux boutons, un caché avec la fonction VPloadAds permettant de lancer les pubs, et un disponible dès le début sans utilisation.
+Techniquement parlant nous aurons alors deux boutons, un disponible dès le début sans fonction et un caché avec la fonction VPloadAds permettant de lancer les pubs.
 
 Voici comment faire :
 ```html
