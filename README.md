@@ -206,26 +206,33 @@ N’hésitez pas à nous contacter pour adapter notre bouton à vos spécificit�
 Une fois le bouton chargé via la fonction VPexistAds(), il faudra appeler une URL d'un pixel de comptage du style pro.jokerly.com/Okidak/trackView.htm?id=XXX
 Celle-ci vous sera fourni par votre contact ViewPay.
 
-### Chargement boutons d’appel à ViewPay
-Une nouvelle optique a été confirmé comme étant plus efficace et apportant une meilleure expérience utilisateur : un bouton d'appel à ViewPay qui se charge en attendant la vérification des publicités.
+### Optimisation du chargement du bouton ViewPay
+Il est primordial d’optimiser la vitesse d’affichage du bouton Viewpay, pour maximiser le taux de clic sur le bouton et donc les revenus générés. Il faut donc s’assurer d’appeler VpInit() le plus au début de la page possible, pour que la disponibilité de la pub soit déjà connue au moment d’afficher votre paywall.
+
+Malgré cela, comme le chargement des pages fait souvent appel à une multitudes de process (pubs, contenus, analytics…), il peut arriver que la réponse arrive après l’affichage du paywall : le risque est alors que l’utilisateur quitte la page avant même que le bouton soit affiché…
+
+Pour éviter ce phénomène, il faut afficher par défaut un bouton temporaire ViewPay non cliquable, qui affiche la proposition Viewpay et qui informe que le process de recherche de pub est en cours. Ce bouton est remplacé par le bouton cliquable dès que la réponse est obtenue.
 
 La logique est la suivante :
-- Le bouton d'appel à ViewPay est grisé et non actif.
-- On vérifie s'il y a des publicités, 
-	- Si Oui
-		- Le bouton devient activable
-		- Le bouton est visuellement disponible
-	- Si Non
+- Affichage du bonton VieWPay grisé et non cliquable, avec un wording du type "Chargement des publicités...".
+- On vérifie s'il y a des publicités disponibles, 
+	- Si Oui (VPexistAds())
+		- Le bouton change de wording et devient cliquable
+	- Si Non (VPnoaAds())
 		- Le bouton disparaît
 
-Techniquement parlant nous aurons alors deux boutons, un disponible dès le début sans fonction et un caché avec la fonction VPloadAds permettant de lancer les pubs.
+Techniquement parlant il y a donc deux boutons différents : 
+	- Un bouton temporaire (#btnVpChargement) et non cliquable disponible dès le début 
+	- Un bouton définitif (#btnShowViewPay) et caché avec la fonction VPloadAds remplaçant le précédent dès qu'une pub est disponible.
+	
+De cette façon, on évite tout lag entre l’affichage du paywall et celui du bouton ViewPay, ce qui permettra aux lecteurs de découvrir plus rapidement l’existence du bouton ViewPay dans le paywall.
 
 Voici comment faire :
 ```html
-<button id="btnchargement" style="display:block; background-color:grey; ">Nous recherchons des publicités pour vous</button>
+<button id="btnVpChargement" style="display:block; background-color:grey; ">Nous recherchons des publicités pour vous</button>
 <button id="btnShowViewpay" style="display:none; background-color:green;" onclick="VPloadAds()">Accédez à cet article en regardant une publicité</button>
 ```
-Le CSS, le wording et les div concernées sont à réadapter en fonction des différentes chartes graphiques et intégration.
+Le CSS, le wording et les div concernées sont à réadapter en fonction des différentes chartes graphiques et de l'intégration.
 
 Nous avons ainsi nos deux boutons. Il faut désormais les faire interagir en fonction des publicités.
 
@@ -244,7 +251,7 @@ function VPnoAds(){
 }
 ```
 
-Il peut être nécessaire de cacher également ce qui entoure le bouton, par exemple : un wording situé au dessus, une séparation entre les deux boutons etc...
+N.B. : Il peut être nécessaire de cacher également ce qui entoure le bouton, par exemple : un wording situé au dessus, une séparation entre les deux boutons etc...
 
 ## Fond noir
 Il faut ajouter un fond sombre autour du système Viewpay,  qui permet d’optimiser l’expérience utilisateur. Voici un exemple du rendu:  
