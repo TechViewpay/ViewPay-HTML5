@@ -141,7 +141,7 @@ Exemple :
 ...
 </body>
 ```
-Ou plus simplement dans une balise ```html<script>```
+Ou plus simplement dans une balise ```html <script>```
 
 ## Sécurisation du callback VPcompleteAds
 L’ajout de cette fonctionnalité n’est pas obligatoire mais fortement conseillé afin de sécuriser l’utilisation du système Viewpay dans votre site.
@@ -247,7 +247,7 @@ function VPnoAds(){
 Il peut être nécessaire de cacher également ce qui entoure le bouton, par exemple : un wording situé au dessus, une séparation entre les deux boutons etc...
 
 ## Fond noir
-Nous conseillons fortement d’ajouter un fond sombre autour du système Viewpay,  qui permet d’optimiser l’expérience utilisateur. Voici un exemple du rendu:  
+Il faut ajouter un fond sombre autour du système Viewpay,  qui permet d’optimiser l’expérience utilisateur. Voici un exemple du rendu:  
 ![sample](https://cdn.jokerly.com/images/logosVP/exemple_fondnoir.png)
 
 
