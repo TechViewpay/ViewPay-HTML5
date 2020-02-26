@@ -207,6 +207,7 @@ Celle-ci vous sera fourni par votre contact ViewPay.
 
 ### Chargement boutons d’appel à ViewPay
 Une nouvelle optique a été confirmé comme étant plus efficace et apportant une meilleure expérience utilisateur : un bouton d'appel à ViewPay qui se charge en attendant la vérification des publicité.
+
 La logique est la suivante :
 - Le bouton d'appel à ViewPay est grisé et non actif.
 - On vérifie s'il y a des publicités, 
