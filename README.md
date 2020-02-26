@@ -207,7 +207,7 @@ Une fois le bouton chargé via la fonction VPexistAds(), il faudra appeler une U
 Celle-ci vous sera fourni par votre contact ViewPay.
 
 ### Chargement boutons d’appel à ViewPay
-Une nouvelle optique a été confirmé comme étant plus efficace et apportant une meilleure expérience utilisateur : un bouton d'appel à ViewPay qui se charge en attendant la vérification des publicité.
+Une nouvelle optique a été confirmé comme étant plus efficace et apportant une meilleure expérience utilisateur : un bouton d'appel à ViewPay qui se charge en attendant la vérification des publicités.
 
 La logique est la suivante :
 - Le bouton d'appel à ViewPay est grisé et non actif.
