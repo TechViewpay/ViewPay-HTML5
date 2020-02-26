@@ -205,6 +205,7 @@ N’hésitez pas à nous contacter pour adapter notre bouton à vos spécificit�
 Une fois le bouton chargé via la fonction VPexistAds(), il faudra appeler une URL d'un pixel de comptage du style pro.jokerly.com/Okidak/trackView.htm?id=XXX
 Celle-ci vous sera fourni par votre contact ViewPay.
 
+### Chargement boutons d’appel à ViewPay
 Une nouvelle optique a été confirmé comme étant plus efficace et apportant une meilleure expérience utilisateur : un bouton d'appel à ViewPay qui se charge en attendant la vérification des publicité.
 La logique est la suivante :
 - Le bouton d'appel à ViewPay est grisé et non actif.
@@ -219,11 +220,13 @@ Techniquement parlant nous aurons alors deux boutons, un caché avec la fonction
 
 Voici comment faire :
 ```html
-<button id="btnchargement" style="display:block; color:grey; "></button>
-<button id="btnShowViewpay" style="display:none; color:green;" onclick="VPloadAds()"></button>
+<button id="btnchargement" style="display:block; background-color:grey; "></button>
+<button id="btnShowViewpay" style="display:none; background-color:green;" onclick="VPloadAds()"></button>
 ```
+Le CSS des deux boutons sont à réadapter en fonction des différentes chartes graphiques.
 
 Nous avons ainsi nos deux boutons. Il faut désormais les faire interagir en fonction des publicités.
+
 ```javascript
 	function VPexistAds(){
 		alert("existAds");
@@ -238,9 +241,6 @@ Nous avons ainsi nos deux boutons. Il faut désormais les faire interagir en fon
 		alert("noAds");
 	}
 ```
-
-Le CSS des deux boutons sont à réadapter en fonction des différentes chartes graphiques.
-N'hésitez pas à contacter VieWwPay afin de trouver la meilleur solution.
 
 ## Fond noir
 Nous conseillons fortement d’ajouter un fond sombre autour du système Viewpay,  qui permet d’optimiser l’expérience utilisateur. Voici un exemple du rendu:  
