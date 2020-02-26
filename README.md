@@ -11,7 +11,7 @@ Voici un exemple de déblocage d'article avec Viewpay :
 ![sample](https://github.com/TechViewpay/ViewPay-iOS/blob/master/DocImages/parcours_vp_mobile3.png?raw=true)
 
 ## Chargement du Javascript
-```html
+```javascript
 <script type="text/javascript" src="//cdn.jokerly.com/scripts/jkFbASQ.js"></script> 
 ```
 Le fichier jkFbASQ.js est le seul fichier qui doit être chargé dans la page qui va accueillir Viewpay (page affichant le paywall). Ce fichier est servi par notre CDN, pour vous garantir d'avoir toujours la dernière version.
@@ -92,7 +92,7 @@ VPcloseAds() - appelé si l’utilisateur ferme le parcours.
 ViewPay est une solution qui répond aux appels reçus avec agilité et rapidité, il est donc avantageux pour vous de situer chacun des appels au début du chargement de la page Html.
 
 Voici le code à intégrer dans une balise script : 
-```html
+```javascript
 
 <script> 
 	function VPinit(){
@@ -230,18 +230,18 @@ Le CSS des deux boutons sont à réadapter en fonction des différentes chartes 
 Nous avons ainsi nos deux boutons. Il faut désormais les faire interagir en fonction des publicités.
 
 ```javascript
-	function VPexistAds(){
-		alert("existAds");
-		$("#btnchargement").css("display","none");
-		$("#btnShowViewpay").css("display","block");
-	}
+function VPexistAds(){
+	alert("existAds");
+	$("#btnchargement").css("display","none");
+	$("#btnShowViewpay").css("display","block");
+}
 ```	
 
 ```javascript
-	function VPnoAds(){
-		$("#buttonchargement").css("display","none");
-		alert("noAds");
-	}
+function VPnoAds(){
+	$("#buttonchargement").css("display","none");
+	alert("noAds");
+}
 ```
 
 ## Fond noir
@@ -271,14 +271,14 @@ Avec le mot "VPmodal" représentant l'Id de la div possédant le code CSS suivan
 
 Cette div doit aussi disparaître lorsque la personne arrive au VPcompleteAds, ce qui s’obtient ainsi :
  
-```js 
+```javascript 
 function VPcompleteAds(){
 	document.getElementById("cadre").style.display = 'none';
 }
 ```
 
 De plus il faut le faire disparaître si la personne décide de quitter l’adSelector :
-```js
+```javascript
 function VPcloseAds(){
 	document.getElementById("modal").style.display = 'none';
 }	
@@ -288,7 +288,7 @@ Pour finir, la div #cadreJokerlyAds doit être positionnée à l’intérieur de
 
 ```html
 <div id="modal">
-	<div id="cadreJokerlyADS" style=”width:650px;height:450px;”></div>
+	<div id="cadreJokerlyADS" style="width:650px;height:450px;"></div>
 </div>
 ```
 
@@ -299,7 +299,7 @@ Il est possible (et très souhaitable) de transmettre à ViewPay des information
 
 Discutons ensemble du champ des possibles au moment de démarrer l’intégration!
 
-```js
+```javascript
 function VPinit(){
 	JKFBASQ.init({
 		site_id: 'b23d3f0235ae89e4', // id de démo	
