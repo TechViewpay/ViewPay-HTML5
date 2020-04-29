@@ -27,6 +27,7 @@ Ajoutez un div avec l’id "cadreJokerlyADS" dans votre page.
 
 Le design CSS est généré automatiquement lors de l’initialisation de Viewpay, ainsi vous n’êtes pas obligés de rajouter du CSS. Cependant, si vous devez changer le design, votre CSS sera pris en priorité. Pour ceci, donnez à ce div les dimensions que vous souhaitez attribuer à Viewpay, en veillant à conserver un ratio largeur/hauteur de 1,44.
 Nous imposons 650x450 pour du desktop et de le centrer horizontalement et verticalement.
+Voici donc le CSS qui chargeons nous-même :
 
 ```css
 #cadreJokerlyADS{
@@ -46,15 +47,15 @@ Nous imposons 650x450 pour du desktop et de le centrer horizontalement et vertic
 //Ceci est obligatoire afin de garantir de CPM élevé.
 
 ```
+Si vous souhaitez modifier l'une de ces données, n'hésitez pas à contacter votre contact ViewPay
 
-Pour les sites Mobiles/Tablettes : exploiter le responsive 
+La même chose se passe pour les sites Mobiles/Tablettes. 
 
-Pour votre site mobile, il est préférable d’utiliser tout l’espace vertical disponible en ouvrant l’iframe en 100% width et height, ou en spécifiant la taille maximale que vous pouvez nous offrir.
+Pour votre site mobile, on utilise tout l’espace vertical disponible en ouvrant l’iframe en 100% width et height, sauf si vous spécifiez la taille maximale que vous souhaitez nous offrir.
 
-Les balises média suivantes seront à ajouter à votre page CSS pour permettre aux personnes sur mobile de profiter pleinement de l’interface ViewPay:
+Les balises média sont les suivantes suivantes afin de permettre aux personnes sur mobile de profiter pleinement de l’interface ViewPay:
 
 ```css
-//Dans votre fichier CSS
 @media screen and (max-width: 600px){
 	#cadreJokerlyADS{
 	width:100% !important;
@@ -71,7 +72,6 @@ Les balises média suivantes seront à ajouter à votre page CSS pour permettre 
 	}
 }
 
-/* Il est arrivé que chez certains éditeurs l’ajout de “!important” soit nécessaire afin que le format mobile soit effectivement activé. */
 ```
 
 ## Définition des fonctions et callbacks JavaScript
@@ -103,6 +103,7 @@ Voici le code à intégrer dans une balise script :
 			complete_callback : VPcompleteAds,
 			close_callback : VPcloseAds,
 			play_callback : VPplayAds,
+			cover:true,
 		});
 	}
 		
@@ -170,6 +171,7 @@ JKFBASQ.init({
 	complete_callback: VPcompleteAds,
 	close_callback: VPcloseAds,
 	play_callback : VPplay,
+	cover:true,
 	codeCategory:1,
 	secureId : '012345aze',
 	userInfo : {
@@ -297,7 +299,7 @@ Pour finir, la div #cadreJokerlyAds doit être positionnée à l’intérieur de
 
 ```html
 <div id="modal">
-	<div id="cadreJokerlyADS" style="width:650px;height:450px;"></div>
+	<div id="cadreJokerlyADS"></div>
 </div>
 ```
 
