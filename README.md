@@ -95,7 +95,7 @@ Voici le code à intégrer dans une balise script :
 ```javascript
 
 <script> 
-	function VPinit(){
+	function VPinitVideo(){
 		JKFBASQ.init({
 			site_id: 'b23d3f0235ae89e4', // id de démo fonctionnel
 			load_callback : VPexistAds,
@@ -134,11 +134,11 @@ Voici le code à intégrer dans une balise script :
 
 Pour débloquer l’article, insérez dans le VPcompleteAds(), votre fonction/code permettant de débloquer l’article.
 
-NB: La fonction VPinit(), que vous avez configurée avec votre identifiant Viewpay (site_id), doit être appelée en amont de l’apparition du système Viewpay, afin de permettre à notre système d’aller interroger le catalogue de publicités pour trouver le contenu adapté. 
+NB: La fonction VPinitVideo(), que vous avez configurée avec votre identifiant Viewpay (site_id), doit être appelée en amont de l’apparition du système Viewpay, afin de permettre à notre système d’aller interroger le catalogue de publicités pour trouver le contenu adapté. 
 
 Exemple : 
 ```html
-<body onload="VPinit()">
+<body onload="VPinitVideo()">
 ...
 </body>
 ```
@@ -311,7 +311,7 @@ Il est possible (et très souhaitable) de transmettre à ViewPay des information
 Discutons ensemble du champ des possibles au moment de démarrer l’intégration!
 
 ```javascript
-function VPinit(){
+function VPinitVideo(){
 	JKFBASQ.init({
 		site_id: 'b23d3f0235ae89e4', // id de démo	
 		load_callback : VPexistAds,
