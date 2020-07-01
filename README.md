@@ -205,9 +205,6 @@ Nous conseillons d’adapter le wording au mieux par rapport au wording de l’a
 Ainsi, si l’autre alternative est “je m’inscris” alors notre bouton devra également utiliser le “je” : “J’accède à cet article”...
 N’hésitez pas à nous contacter pour adapter notre bouton à vos spécificités.
 
-Une fois le bouton chargé via la fonction VPexistAds(), il faudra appeler une URL d'un pixel de comptage du style pro.jokerly.com/Okidak/trackView.htm?id=XXX
-Celle-ci vous sera fourni par votre contact ViewPay.
-
 ### Optimisation du chargement du bouton ViewPay
 Il est primordial d’optimiser la vitesse d’affichage du bouton Viewpay, pour maximiser le taux de clic sur le bouton et donc les revenus générés. Il faut donc s’assurer d’appeler VpInit() le plus au début de la page possible, pour que la disponibilité de la pub soit déjà connue au moment d’afficher votre paywall.
 
