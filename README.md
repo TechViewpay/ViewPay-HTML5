@@ -238,14 +238,14 @@ Nous avons ainsi nos deux boutons. Il faut désormais les faire interagir en fon
 ```javascript
 function VPexistAds(){
 	alert("existAds");
-	$("#btnchargement").css("display","none");
+	$("#btnVpChargement").css("display","none");
 	$("#btnShowViewpay").css("display","block");
 }
 ```	
 
 ```javascript
 function VPnoAds(){
-	$("#buttonchargement").css("display","none");
+	$("#btnVpChargement").css("display","none");
 	alert("noAds");
 }
 ```
