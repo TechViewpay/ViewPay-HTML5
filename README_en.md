@@ -225,7 +225,7 @@ The logic is the following:
 	- If No (VPnoAds ()) : The button disappears (or a message can be shown)
 
 Technically speaking there are therefore two different buttons:
-- A temporary (#btnVpChargement) and non-clickable button available from the start
+- A temporary (#btnVpLoading) and non-clickable button available from the start
 - A final button (#btnShowViewPay), clickable but hidden. 
 As soon as an advertisement is available, the VPloadAds function replaces the temporary buttin with the final one .
 
@@ -233,7 +233,7 @@ This way, any lag is avoided between the display of the paywall and that of the 
 
 Here is how to do this :
 ```html
-<button id="btnVpChargement" style="display:block; background-color:grey; ">Searching for ads to unlock this article...</button>
+<button id="btnVpLoading" style="display:block; background-color:grey; ">Searching for ads to unlock this article...</button>
 <button id="btnShowViewpay" style="display:none; background-color:green;" onclick="VPloadAds()">Access this article by watching an ad</button>
 ```
 The CSS, the wording and concerned div need to be readapted  according to the graphical charters and the integration.
@@ -243,14 +243,14 @@ The two ViewPay buttons now need to interact according to the ads availability:
 ```javascript
 function VPexistAds(){
 	alert("existAds");
-	$("#btnchargement").css("display","none");
+	$("#btnVPLoading").css("display","none");
 	$("#btnShowViewpay").css("display","block");
 }
 ```	
 
 ```javascript
 function VPnoAds(){
-	$("#buttonchargement").css("display","none");
+	$("#btnVpLoading").css("display","none");
 	alert("noAds");
 }
 ```
