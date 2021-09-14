@@ -259,7 +259,7 @@ N.B. : It may be necessary to also hide what surrounds the button, for example: 
 
 ## Dark background
 A dark background must be added around the Viewpay system, which helps optimize the user experience and attention. Here is an example of how this looks :
-![sample](https://cdn.jokerly.com/images/logosVP/exemple_fondnoir.png)
+![sample](https://cdn.jokerly.com/images/logosVP/screenshotUK.png)
 
 
 To do so, the background must be displayed at the same time as the ViewPay AdSelector, by adding it in the VPloadAds function:
