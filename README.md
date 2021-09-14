@@ -254,7 +254,7 @@ N.B. : Il peut être nécessaire de cacher également ce qui entoure le bouton, 
 
 ## Fond noir
 Il faut ajouter un fond sombre autour du système Viewpay,  qui permet d’optimiser l’expérience utilisateur. Voici un exemple du rendu:  
-![sample](https://cdn.jokerly.com/images/logosVP/exemple_fondnoir.png)
+![sample](https://cdn.jokerly.com/images/logosVP/screenshotFR.png)
 
 
 Pour ce faire, il faut faire apparaître le fond au même moment que l'AdSelector ViewPay en l’ajoutant ainsi dans la fonction VPloadAds : 
