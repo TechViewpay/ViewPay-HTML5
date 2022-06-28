@@ -100,7 +100,7 @@ Voici le code à intégrer dans une balise script :
 			complete_callback : VPcompleteAds,
 			close_callback : VPcloseAds,
 			play_callback : VPplayAds,
-			cover:true,
+			cover:false,
 		});
 	}
 		
