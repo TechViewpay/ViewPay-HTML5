@@ -105,26 +105,26 @@ Voici le code à intégrer dans une balise script :
 	}
 		
 	function VPexistAds(){
-		alert("existAds");
+		console.log("existAds");
 		$("#btnShowViewpay").css("display","block");
 	}
 	function VPloadAds(){
-		alert("loadAds");
+		console.log("loadAds");
 		JKFBASQ.loadAds();
 	}
 	function VPnoAds(){
 		$("#btnShowViewpay").css("display","none");
-		alert("noAds");
+		console.log("noAds");
 	}
 	function VPcompleteAds(){
-		alert("completeAds");
+		console.log("completeAds");
 		/*Une fois la pub finie, le code permettant de débloquer l’article doit se situer ici*/
 	}
 	function VPcloseAds(){
-		alert("closeAds");
+		console.log("closeAds");
 	}
 	function VPplayAds(){
-		alert(“playAds”);
+		console.log("playAds");
 	}
 </script>
  ```
