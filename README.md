@@ -76,15 +76,15 @@ Si vous souhaitez modifier l'une de ces données, n'hésitez pas à contacter vo
 Les fonctions et callbacks fournis par Viewpay sont les suivants : 
 
 Fonctions : 
-VPinitVideo() - appelée typiquement au onload d’une page pour vérifier la disponibilité d’une publicité. Cette fonction appelle le callback VPexistAds() si une ou plusieurs vidéos ont été trouvées, et appelle le callback VPnoAds() si aucune n’a été trouvée pour cet utilisateur.
-VPloadAds() - appelée une fois que vous avez eu la confirmation qu’une pub existe (via le callback VPexistAds()). Permet d’ouvrir le système Viewpay.
+- VPinitVideo() - appelée typiquement au onload d’une page pour vérifier la disponibilité d’une publicité. Cette fonction appelle le callback VPexistAds() si une ou plusieurs vidéos ont été trouvées, et appelle le callback VPnoAds() si aucune n’a été trouvée pour cet utilisateur.
+- VPloadAds() - appelée une fois que vous avez eu la confirmation qu’une pub existe (via le callback VPexistAds()). Permet d’ouvrir le système Viewpay.
 
 Callbacks :
-VPexistAds() - callback appelé si Viewpay a au moins une publicité à servir. Cette fonction vous permet d’afficher le bouton pour lancer Viewpay si vous recevez un OK. Si KO le callback VPnoAds() est appelé.
-VPnoAds() - callback appelé si Viewpay n’a aucune publicité à servir.
-VPplayAds() - callback de notification appelé lorsque l’utilisateur démarre la vidéo.
-VPcompleteAds() - appelé quand l’utilisateur a fini le parcours.
-VPcloseAds() - appelé si l’utilisateur ferme le parcours.
+- VPexistAds() - callback appelé si Viewpay a au moins une publicité à servir. Cette fonction vous permet d’afficher le bouton pour lancer Viewpay si vous recevez un OK. Si KO le callback VPnoAds() est appelé.
+- VPnoAds() - callback appelé si Viewpay n’a aucune publicité à servir.
+- VPplayAds() - callback de notification appelé lorsque l’utilisateur démarre la vidéo.
+- VPcompleteAds() - appelé quand l’utilisateur a fini le parcours.
+- VPcloseAds() - appelé si l’utilisateur ferme le parcours.
 
 ViewPay est une solution qui répond aux appels reçus avec agilité et rapidité, il est donc avantageux pour vous de situer chacun des appels au début du chargement de la page Html.
 
