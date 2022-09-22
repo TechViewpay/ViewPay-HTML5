@@ -19,12 +19,15 @@ NB: Il faut placer le script le plus haut possible dans la page afin d’optimis
 ## Création d’un div pour accueillir la publicité
 Ajoutez un div avec l’id "cadreJokerlyADS" dans votre page. 
 ```html
-<div id="cadreJokerlyADS"></div>
+<div id="VPmodal">
+	<div id="cadreJokerlyADS"></div>
+</div>
 ```
 
 Le design CSS est généré automatiquement lors de l’initialisation de Viewpay, ainsi vous n’êtes pas obligés de rajouter du CSS. Cependant, si vous devez changer le design, votre CSS sera pris en priorité. Pour ceci, donnez à ce div les dimensions que vous souhaitez attribuer à Viewpay, en veillant à conserver un ratio largeur/hauteur de 1,44.
 Nous imposons 650x450 pour du desktop et de le centrer horizontalement et verticalement.
-Voici donc le CSS qui chargeons nous-même :
+Pour votre site mobile, on utilise tout l’espace vertical disponible en ouvrant l’iframe en 100% width et height, sauf si vous spécifiez la taille maximale que vous souhaitez nous offrir.
+Voici donc le CSS à mettre dans votre page :
 
 ```css
 #cadreJokerlyADS{
@@ -38,21 +41,6 @@ Voici donc le CSS qui chargeons nous-même :
 	height: 450px !important;
 	z-index:9999999 !important;
 }
-
-//Le z-index est nécessaire à la visibilité de la publicité. 
-//Il est impératif de le monter si nécessaire si une frame/bannière/autre est au dessus du nôtre.
-//Ceci est obligatoire afin de garantir de CPM élevé.
-
-```
-Si vous souhaitez modifier l'une de ces données, n'hésitez pas à contacter votre contact ViewPay
-
-La même chose se passe pour les sites Mobiles/Tablettes. 
-
-Pour votre site mobile, on utilise tout l’espace vertical disponible en ouvrant l’iframe en 100% width et height, sauf si vous spécifiez la taille maximale que vous souhaitez nous offrir.
-
-Les balises média sont les suivantes suivantes afin de permettre aux personnes sur mobile de profiter pleinement de l’interface ViewPay:
-
-```css
 @media screen and (max-width: 600px){
 	#cadreJokerlyADS{
 	width:100% !important;
@@ -68,15 +56,19 @@ Les balises média sont les suivantes suivantes afin de permettre aux personnes 
 	margin-left:0;
 	}
 }
-
+//Le z-index est nécessaire à la visibilité de la publicité. 
+//Il est impératif de le monter si nécessaire si une frame/bannière/autre est au dessus du nôtre.
+//Ceci est obligatoire afin de garantir de CPM élevé.
 ```
+
+Si vous souhaitez modifier l'une de ces données, n'hésitez pas à contacter votre contact ViewPay
 
 ## Définition des fonctions et callbacks JavaScript
 
 Les fonctions et callbacks fournis par Viewpay sont les suivants : 
 
 Fonctions : 
-VPinit() - appelée typiquement au onload d’une page pour vérifier la disponibilité d’une publicité. Cette fonction appelle le callback VPexistAds() si une ou plusieurs vidéos ont été trouvées, et appelle le callback VPnoAds() si aucune n’a été trouvée pour cet utilisateur.
+VPinitVideo() - appelée typiquement au onload d’une page pour vérifier la disponibilité d’une publicité. Cette fonction appelle le callback VPexistAds() si une ou plusieurs vidéos ont été trouvées, et appelle le callback VPnoAds() si aucune n’a été trouvée pour cet utilisateur.
 VPloadAds() - appelée une fois que vous avez eu la confirmation qu’une pub existe (via le callback VPexistAds()). Permet d’ouvrir le système Viewpay.
 
 Callbacks :
