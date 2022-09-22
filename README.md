@@ -56,6 +56,14 @@ Voici donc le CSS à mettre dans votre page :
 	margin-left:0;
 	}
 }
+#VPmodal{
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 9999999 !important;
+}
 //Le z-index est nécessaire à la visibilité de la publicité. 
 //Il est impératif de le monter si nécessaire si une frame/bannière/autre est au dessus du nôtre.
 //Ceci est obligatoire afin de garantir de CPM élevé.
@@ -98,22 +106,25 @@ Voici le code à intégrer dans une balise script :
 		
 	function VPexistAds(){
 		console.log("existAds");
-		$("#btnShowViewpay").css("display","block");
+		document.getElementById("btnShowViewpay").style.display = "block";
 	}
 	function VPloadAds(){
 		console.log("loadAds");
+		document.getElementById("modal").style.display = "block";
 		JKFBASQ.loadAds();
 	}
 	function VPnoAds(){
-		$("#btnShowViewpay").css("display","none");
+		document.getElementById("btnShowViewpay").style.display = "none";
 		console.log("noAds");
 	}
 	function VPcompleteAds(){
 		console.log("completeAds");
+		document.getElementById("modal").style.display = "none";
 		/*Une fois la pub finie, le code permettant de débloquer l’article doit se situer ici*/
 	}
 	function VPcloseAds(){
 		console.log("closeAds");
+		document.getElementById("modal").style.display = "none";
 	}
 	function VPplayAds(){
 		console.log("playAds");
@@ -197,56 +208,6 @@ function VPnoAds(){
 
 N.B. : Il peut être nécessaire de cacher également ce qui entoure le bouton, par exemple : un wording situé au dessus, une séparation entre les deux boutons etc...
 
-## Fond noir
-Il faut ajouter un fond sombre autour du système Viewpay,  qui permet d’optimiser l’expérience utilisateur. Voici un exemple du rendu:  
-![sample](https://cdn.jokerly.com/images/logosVP/screenshotFR.png)
-
-
-Pour ce faire, il faut faire apparaître le fond au même moment que l'AdSelector ViewPay en l’ajoutant ainsi dans la fonction VPloadAds : 
-
-```javascript
-function VPloadAds(){
-	document.getElementById("modal").style.display = 'block';
-	JKFBASQ.loadAds();
-}
-```
-Avec le mot "VPmodal" représentant l'Id de la div possédant le code CSS suivant, nous conseillons de fixer l’opacité de background-color à 0.9 afin d’assurer aux annonceurs une visibilité optimale de leurs vidéos : 
-```css
-#VPmodal{
-    width: 100%;
-    height: 100%;
-    display: none;
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.9);
-    z-index: 1000;
-}
-```
-
-Cette div doit aussi disparaître lorsque la personne arrive au VPcompleteAds, ce qui s’obtient ainsi :
- 
-```javascript 
-function VPcompleteAds(){
-	document.getElementById("cadre").style.display = 'none';
-}
-```
-
-De plus il faut le faire disparaître si la personne décide de quitter l’adSelector :
-```javascript
-function VPcloseAds(){
-	document.getElementById("modal").style.display = 'none';
-}	
-```
-
-Pour finir, la div #cadreJokerlyAds doit être positionnée à l’intérieur de la div #modal:
-
-```html
-<div id="modal">
-	<div id="cadreJokerlyADS"></div>
-</div>
-```
-
-Nous avons remarqué que les modales de Bootstrap sont par défaut affichées avec un délai de 0.15 secondes. Pour corriger ce problème dans un site Bootstrap, il suffit de lancer VPLoadAds dans un setTimeout d’au minimum 0.15s.
-
 ## Informations de ciblage
 Il est possible (et très souhaitable) de transmettre à ViewPay des informations qui nous permettront de mieux cibler les publicités pour chaque utilisateur. Si vous disposez d’informations non nominatives sur l’utilisateur, telles que son sexe et son âge, où encore la catégorie de l’article à débloquer (Economie, International, sport…), ces informations peuvent être renseignées dans la fonction Init().
 
@@ -298,3 +259,5 @@ Présenter les offres alternatives (Abonnement, inscription, Viewpay…) de mani
 La charte graphique du bouton ViewPay (longueur, bordure ....) peut être modifiée afin de mieux respecter la votre.
 Présenter le paywall le plus en haut possible de la page pour éviter le plus possible la nécessité de scroller pour rendre le bouton VP visible. Positionner le bouton Viewpay en première option (verticalement parlant) est préférable, pour la même raison.
 Chaque paywall est unique, alors discutons ensemble au moment de l’intégration pour optimiser au mieux le rendu!
+
+Si vous utilisez Bootstrap, nous avons remarqué que les modales de Bootstrap sont par défaut affichées avec un délai de 0.15 secondes. Pour corriger ce problème dans un site Bootstrap, il suffit de lancer VPLoadAds dans un setTimeout d’au minimum 0.15s.
