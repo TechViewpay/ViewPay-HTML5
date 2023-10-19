@@ -169,7 +169,7 @@ Il est primordial d’optimiser la vitesse d’affichage du bouton Viewpay, pour
 
 Malgré cela, comme le chargement des pages fait souvent appel à une multitudes de process (pubs, contenus, analytics…), il peut arriver que la réponse arrive après l’affichage du paywall : le risque est alors que l’utilisateur quitte la page avant même que le bouton soit affiché…
 
-Pour éviter ce phénomène, nous vous recommandons d'afficher un bouton temporaire non cliquable, qui place la proposition Viewpay dans le paywall et qui informe que le process de recherche de pub est en cours. Ce bouton est remplacé par le bouton cliquable dès que la réponse est obtenue.
+Pour éviter ce phénomène, affichez un bouton temporaire non cliquable, qui place la proposition Viewpay dans le paywall et qui informe que le process de recherche de pub est en cours. Ce bouton est remplacé par le bouton cliquable dès que la réponse est obtenue.
 
 La logique est la suivante :
 - Affichage du bouton ViewPay grisé et non cliquable, avec un wording du type "Recherche de publicités...".
@@ -190,6 +190,7 @@ function VPexistAds(){
 	var btnVp = document.getElementById("btnShowViewPay");
 	btnVp.style.backgroundColor = #1bbbec;
 	btnVp.style.cursor = "pointer";
+	btnVp.textContent = "Je regarde une publicité";
 	btnVp.onclick = VPloadAds();
 }
 ...
