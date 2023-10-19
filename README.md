@@ -147,7 +147,7 @@ Ou plus simplement dans une balise ```html <script>```
 ## Bouton d’appel à ViewPay
 Voici un exemple de bouton d’appel à ViewPay que nous vous proposons :
 
-Presse Bleu arrondi « Je » : http://cdn.jokerly.com/images/logosVP/Bouton_arrondi_bleu_presse_je.png
+Presse Bleu arrondi « Je » : https://cdn.jokerly.com/images/logosVP/Bouton_arrondi_bleu_presse_je.png
 ![sample](https://cdn.jokerly.com/images/logosVP/Bouton_arrondi_bleu_presse_je.png)
 
 Nous conseillons d’adapter le wording au mieux par rapport au wording de l’autre alternative proposée en face de ViewPay dans votre paywall. 
@@ -155,10 +155,9 @@ Ainsi, si l’autre alternative est “je m’inscris” alors notre bouton devr
 N’hésitez pas à nous contacter pour adapter notre bouton à vos spécificités.
 
 Voici l'url du picto ViewPay que nous devez intégrer à votre bouton : 
-Blanc : 
-![sample](https://cdn.jokerly.com/img/minilogo.png)
-Noir : 
-![sample](https://cdn.jokerly.com/img/minilogo_noir.png)
+
+Blanc : ![sample](https://cdn.jokerly.com/img/minilogo.png) https://cdn.jokerly.com/img/minilogo.png
+Noir : ![sample](https://cdn.jokerly.com/img/minilogo_noir.png) https://cdn.jokerly.com/img/minilogo_noir.png
 
 Vous pouvez positionner ce picto avec du css comme ceci :
 ```css
