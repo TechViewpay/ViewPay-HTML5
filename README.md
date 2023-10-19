@@ -170,7 +170,7 @@ La logique est la suivante :
 		- Le bouton disparaît ou le wording s'adapte pour expliquer qu'aucune publicité n'est disponible.
 
  Techniquement, il suffit de faire comme ceci :
- - Un élement button avec ```html id="btnShowViewPay" ``` avec le texte "Recherche de publicité". Eventuellement avec la propriété de style : ```css cursor: not-allowed```
+ - Un élement button avec ```id="btnShowViewPay"``` avec le texte "Recherche de publicité". Eventuellement avec la propriété de style : ```cursor: not-allowed```
 ```html
 <button type="button" id="btnShowViewPay" style="cursor:not-allowed">Recherche de publicit&eacute;</button>
 ```
