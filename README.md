@@ -154,6 +154,17 @@ Nous conseillons d’adapter le wording au mieux par rapport au wording de l’a
 Ainsi, si l’autre alternative est “je m’inscris” alors notre bouton devra également utiliser le “je” : “J’accède à cet article”...
 N’hésitez pas à nous contacter pour adapter notre bouton à vos spécificités.
 
+Voici l'url du picto ViewPay que nous devez intégrer à votre bouton : 
+Blanc : 
+![sample](https://cdn.jokerly.com/img/minilogo.png)
+Noir : 
+![sample](https://cdn.jokerly.com/img/minilogo_noir.png)
+
+Vous pouvez positionner ce picto avec du css comme ceci :
+```css
+background: url(https://cdn.jokerly.com/img/minilogo.png) 10px center no-repeat;
+```
+
 ### Optimisation du chargement du bouton ViewPay
 Il est primordial d’optimiser la vitesse d’affichage du bouton Viewpay, pour maximiser le taux de clic sur le bouton et donc les revenus générés. Il faut donc s’assurer d’appeler VpInit() le plus tôt possible, pour que la disponibilité de la pub soit déjà connue au moment d’afficher votre paywall.
 
