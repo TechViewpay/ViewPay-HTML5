@@ -144,69 +144,55 @@ Exemple :
 ```
 Ou plus simplement dans une balise ```html <script>```
 
-## Boutons d’appel à ViewPay
-Voici trois boutons d’appel à ViewPay que nous vous mettons à disposition pour respecter la charte Viewpay:
-
-Presse Blanc : http://cdn.jokerly.com/images/logosVP/Bouton_carre_blanc_press.png
-![sample](https://cdn.jokerly.com/images/logosVP/Bouton_carre_blanc_press.png)
-
-Presse Bleu : http://cdn.jokerly.com/images/logosVP/Bouton_carre_bleu_press.png
-![sample](https://cdn.jokerly.com/images/logosVP/Bouton_carre_bleu_press.png)
+## Bouton d’appel à ViewPay
+Voici un exemple de bouton d’appel à ViewPay que nous vous proposons :
 
 Presse Bleu arrondi « Je » : http://cdn.jokerly.com/images/logosVP/Bouton_arrondi_bleu_presse_je.png
 ![sample](https://cdn.jokerly.com/images/logosVP/Bouton_arrondi_bleu_presse_je.png)
-
 
 Nous conseillons d’adapter le wording au mieux par rapport au wording de l’autre alternative proposée en face de ViewPay dans votre paywall. 
 Ainsi, si l’autre alternative est “je m’inscris” alors notre bouton devra également utiliser le “je” : “J’accède à cet article”...
 N’hésitez pas à nous contacter pour adapter notre bouton à vos spécificités.
 
 ### Optimisation du chargement du bouton ViewPay
-Il est primordial d’optimiser la vitesse d’affichage du bouton Viewpay, pour maximiser le taux de clic sur le bouton et donc les revenus générés. Il faut donc s’assurer d’appeler VpInit() le plus au début de la page possible, pour que la disponibilité de la pub soit déjà connue au moment d’afficher votre paywall.
+Il est primordial d’optimiser la vitesse d’affichage du bouton Viewpay, pour maximiser le taux de clic sur le bouton et donc les revenus générés. Il faut donc s’assurer d’appeler VpInit() le plus tôt possible, pour que la disponibilité de la pub soit déjà connue au moment d’afficher votre paywall.
 
 Malgré cela, comme le chargement des pages fait souvent appel à une multitudes de process (pubs, contenus, analytics…), il peut arriver que la réponse arrive après l’affichage du paywall : le risque est alors que l’utilisateur quitte la page avant même que le bouton soit affiché…
 
-Pour éviter ce phénomène, il faut afficher par défaut un bouton temporaire ViewPay non cliquable, qui affiche la proposition Viewpay et qui informe que le process de recherche de pub est en cours. Ce bouton est remplacé par le bouton cliquable dès que la réponse est obtenue.
+Pour éviter ce phénomène, nous vous recommandons d'afficher un bouton temporaire non cliquable, qui place la proposition Viewpay dans le paywall et qui informe que le process de recherche de pub est en cours. Ce bouton est remplacé par le bouton cliquable dès que la réponse est obtenue.
 
 La logique est la suivante :
-- Affichage du bonton VieWPay grisé et non cliquable, avec un wording du type "Chargement des publicités...".
+- Affichage du bouton ViewPay grisé et non cliquable, avec un wording du type "Recherche de publicités...".
 - On vérifie s'il y a des publicités disponibles, 
 	- Si Oui (VPexistAds())
 		- Le bouton change de wording et devient cliquable
 	- Si Non (VPnoaAds())
-		- Le bouton disparaît
+		- Le bouton disparaît ou le wording s'adapte pour expliquer qu'aucune publicité n'est disponible.
 
-Techniquement parlant il y a donc deux boutons différents : 
-	- Un bouton temporaire (#btnVpChargement) et non cliquable disponible dès le début 
-	- Un bouton définitif (#btnShowViewPay) et caché avec la fonction VPloadAds remplaçant le précédent dès qu'une pub est disponible.
-	
-De cette façon, on évite tout lag entre l’affichage du paywall et celui du bouton ViewPay, ce qui permettra aux lecteurs de découvrir plus rapidement l’existence du bouton ViewPay dans le paywall.
-
-Voici comment faire :
+ Techniquement, il suffit de faire comme ceci :
+ - Un élement button avec ```html id="btnShowViewPay" ``` avec le texte "Recherche de publicité". Eventuellement avec la propriété de style : ```css cursor: not-allowed```
 ```html
-<button id="btnVpChargement" style="display:block; background-color:grey; ">Nous recherchons des publicités pour vous</button>
-<button id="btnShowViewpay" style="display:none; background-color:green;" onclick="VPloadAds()">Accédez à cet article en regardant une publicité</button>
+<button type="button" id="btnShowViewPay" style="cursor:not-allowed">Recherche de publicit&eacute;</button>
 ```
-Le CSS, le wording et les div concernées sont à réadapter en fonction des différentes chartes graphiques et de l'intégration.
-
-Nous avons ainsi nos deux boutons. Il faut désormais les faire interagir en fonction des publicités.
-
+Ensuite, il ne reste plus qu'à utiliser les callbacks pour appliquer le style et les propriétés JS adaptées : 
 ```javascript
 function VPexistAds(){
-	alert("existAds");
-	$("#btnVpChargement").css("display","none");
-	$("#btnShowViewpay").css("display","block");
+	var btnVp = document.getElementById("btnShowViewPay");
+	btnVp.style.backgroundColor = #1bbbec;
+	btnVp.style.cursor = "pointer";
+	btnVp.onclick = VPloadAds();
 }
-```	
-
-```javascript
+...
 function VPnoAds(){
-	$("#btnVpChargement").css("display","none");
-	alert("noAds");
+	var btnVP = document.getElementById("btnShowViewPay");
+	btnVp.textContent = "Aucune publicité disponible.";
 }
 ```
+  
+De cette façon, on évite tout lag entre l’affichage du paywall et celui du bouton ViewPay, ce qui permettra aux lecteurs de découvrir plus rapidement l’existence du bouton ViewPay dans le paywall.
 
-N.B. : Il peut être nécessaire de cacher également ce qui entoure le bouton, par exemple : un wording situé au dessus, une séparation entre les deux boutons etc...
+NB: si vous remarquez que le texte de votre bouton en cas de publicité disponible n'est pas identique à celui que vous avez configuré, contactez nous. Il s'agit d'un texte par défaut qui s'applique, et nous le modifierons à votre convenance. 
+
 
 ## Informations de ciblage
 Il est possible (et très souhaitable) de transmettre à ViewPay des informations qui nous permettront de mieux cibler les publicités pour chaque utilisateur. Si vous disposez d’informations non nominatives sur l’utilisateur, telles que son sexe et son âge, où encore la catégorie de l’article à débloquer (Economie, International, sport…), ces informations peuvent être renseignées dans la fonction Init().
