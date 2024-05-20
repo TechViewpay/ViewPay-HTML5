@@ -61,7 +61,7 @@ Voici donc le CSS à mettre dans votre page :
     height: 100%;
     display: none;
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.85);
     z-index: 9999999 !important;
 }
 //Le z-index est nécessaire à la visibilité de la publicité. 
@@ -110,7 +110,7 @@ Voici le code à intégrer dans une balise script :
 	}
 	function VPloadAds(){
 		console.log("loadAds");
-		document.getElementById("modal").style.display = "block";
+		document.getElementById("VPmodal").style.display = "block";
 		JKFBASQ.loadAds();
 	}
 	function VPnoAds(){
@@ -119,12 +119,12 @@ Voici le code à intégrer dans une balise script :
 	}
 	function VPcompleteAds(){
 		console.log("completeAds");
-		document.getElementById("modal").style.display = "none";
+		document.getElementById("VPmodal").style.display = "none";
 		/*Une fois la pub finie, le code permettant de débloquer l’article doit se situer ici*/
 	}
 	function VPcloseAds(){
 		console.log("closeAds");
-		document.getElementById("modal").style.display = "none";
+		document.getElementById("VPmodal").style.display = "none";
 	}
 	function VPplayAds(){
 		console.log("playAds");
@@ -203,49 +203,6 @@ function VPnoAds(){
 De cette façon, on évite tout lag entre l’affichage du paywall et celui du bouton ViewPay, ce qui permettra aux lecteurs de découvrir plus rapidement l’existence du bouton ViewPay dans le paywall.
 
 NB: si vous remarquez que le texte de votre bouton en cas de publicité disponible n'est pas identique à celui que vous avez configuré, contactez nous. Il s'agit d'un texte par défaut qui s'applique, et nous le modifierons à votre convenance. 
-
-
-## Informations de ciblage
-Il est possible (et très souhaitable) de transmettre à ViewPay des informations qui nous permettront de mieux cibler les publicités pour chaque utilisateur. Si vous disposez d’informations non nominatives sur l’utilisateur, telles que son sexe et son âge, où encore la catégorie de l’article à débloquer (Economie, International, sport…), ces informations peuvent être renseignées dans la fonction Init().
-
-Discutons ensemble du champ des possibles au moment de démarrer l’intégration!
-
-```javascript
-function VPinitVideo(){
-	JKFBASQ.init({
-		site_id: 'b23d3f0235ae89e4', // id de démo	
-		load_callback : VPexistAds,
-		noads_callback : VPnoAds,
-		complete_callback : VPcompleteAds,
-		close_callback : VPcloseAds,
-		play_callback : VPplayAds,
-		codeCategory:1
-		userInfo : {
-			age:35,
-			gender:'M',
-			country:'FR',
-			language:'fr',
-			postcode:75018,
-		}
-	});
-}
-```
-
-Tous les champs ne sont pas obligatoires. Les valeurs par défaut de ces champs sont donc vides. 
-
-| Paramètres |      Exemple      |  Description |
-|----------|:-------------:|-------|
-| codeCategory (int) | 1 | Représente la catégorie d’articles <br>que l’utilisateur souhaite débloquer:<br> 0 : News,<br> 1 : Sports,<br> 2 : Economy,<br> 3 : Politics,<br> 4 : Environment,<br> 5 : Science,<br> 6 : Technology,<br> 7 : Others |
-| age (int) | 35 | Age de l'utilisateur |
-| gender (char) | M | Sexe de l'utilisateur. Valeurs possibles 'M' ou 'F' |
-| country (char) | FR | Code pays de l'utilisateur |
-| language (char) | fr | Code langue de l'utilisateur |
-| postcode (int) | 75001 | Code postal de l'utilisateur |
-
-
-Nous avons la possibilité d’ajouter des codeCategory selon vos besoins.
-Ainsi si vous ne trouvez pas les catégories qui vous correspondent, l’équipe de ViewPay est à votre disposition pour en discuter.
-
 
 ## Conseils d’optimisation d’un Paywall avec Viewpay
 Grâce à notre expérience chez nos éditeurs, voici quelques conseils afin de maximiser votre taux de clics sur notre bouton:
