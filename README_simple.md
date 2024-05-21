@@ -146,6 +146,5 @@ Noir : ![sample](https://cdn.jokerly.com/img/minilogo_noir.png) https://cdn.joke
 
 Vous pouvez positionner ce picto avec du css comme ceci :
 ```css
-background: url(https://cdn.jokerly.com/img/minilogo.png) 10px center no-repeat;
+background: url(https://cdn.jokerly.com/images/play_btn_lightgray_small.png) 10px center no-repeat;
 ```
-![sample](https://cdn.jokerly.com/img/minilogo.png)
