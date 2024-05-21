@@ -1,4 +1,4 @@
-# ViewPay HTML5: Guide de démarrage
+# ViewPay HTML5: Guide de démarrage simplifié
 Ce guide a pour objectif de vous guider dans la mise en place du widget JS ViewPay dans votre site web.
 
 Pour rappel, Viewpay est une solution de micro-paiement par l'attention publicitaire, qui permet à l'utilisateur de débloquer un contenu premium en regardant une publicité. Viewpay a pour vocation d'être une alternative à d'autres options pour débloquer un contenu premium, et ne doit pas être installé comme seule option d'un paywall.
@@ -125,3 +125,22 @@ Callbacks :
 
 ViewPay est une solution qui répond aux appels reçus avec agilité et rapidité, il est donc avantageux pour vous de situer chacun des appels au début du chargement de la page Html.
 
+## Bouton ViewPay
+
+Nous vous conseillons d'adapter le wording du bouton ViewPay au mieux par rapport au contexte dans lequel il est intégré.
+
+Voici un exemple de bouton d’appel à ViewPay dans la Presse :
+Presse Bleu arrondi « Je » :
+![sample](https://cdn.jokerly.com/images/logosVP/Bouton_arrondi_bleu_presse_je.png)
+
+Nous conseillons également d'intégrer un picto ViewPay à votre bouton, pour susciter de l'intérêt chez l'utilisateur.
+Voici l'url du picto ViewPay que nous devez intégrer à votre bouton : 
+
+Blanc : ![sample](https://cdn.jokerly.com/img/minilogo.png) https://cdn.jokerly.com/img/minilogo.png
+Noir : ![sample](https://cdn.jokerly.com/img/minilogo_noir.png) https://cdn.jokerly.com/img/minilogo_noir.png
+
+Vous pouvez positionner ce picto avec du css comme ceci :
+```css
+background: url(https://cdn.jokerly.com/img/minilogo.png) 10px center no-repeat;
+```
+![sample](https://cdn.jokerly.com/img/minilogo.png)
