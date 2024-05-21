@@ -132,7 +132,7 @@ Exemple de bouton ViewPay dans la Presse :
 ![sample](https://cdn.jokerly.com/images/logosVP/Bouton_arrondi_bleu_presse_je.png)
 
 Exemple de bouton ViewPay dans un jeu : 
-![sample](https://cdn.jokerly.com/img/exemple_btn_jeu.jpg)
+![sample](https://cdn.jokerly.com/img/exemple_btn_jeu.png)
 
 Nous conseillons également d'intégrer un élément visuel comme un picto ViewPay ou un bouton "Play" à votre bouton, pour susciter de l'intérêt chez l'utilisateur.
 Voici des pictos que que nous mettons à votre disposition : 
