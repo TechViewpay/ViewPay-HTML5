@@ -128,12 +128,19 @@ ViewPay est une solution qui répond aux appels reçus avec agilité et rapidit�
 
 Nous vous conseillons d'adapter le wording du bouton ViewPay au mieux par rapport au contexte dans lequel il est intégré.
 
-Voici un exemple de bouton d’appel à ViewPay dans la Presse :
+Exemple de bouton ViewPay dans la Presse :
 ![sample](https://cdn.jokerly.com/images/logosVP/Bouton_arrondi_bleu_presse_je.png)
 
-Nous conseillons également d'intégrer un picto ViewPay à votre bouton, pour susciter de l'intérêt chez l'utilisateur.
-Voici l'url du picto ViewPay que nous devez intégrer à votre bouton : 
+Exemple de bouton ViewPay dans un jeu : 
+![sample](https://cdn.jokerly.com/img/exemple_btn_jeu.jpg)
 
+Nous conseillons également d'intégrer un élément visuel comme un picto ViewPay ou un bouton "Play" à votre bouton, pour susciter de l'intérêt chez l'utilisateur.
+Voici des pictos que que nous mettons à votre disposition : 
+
+Blanc : ![sample](https://cdn.jokerly.com/images/play_btn_white_small.png) https://cdn.jokerly.com/images/play_btn_white_small.png
+Gris clair : ![sample](https://cdn.jokerly.com/images/play_btn_lightgray_small.png) https://cdn.jokerly.com/images/play_btn_lightgray_small.png
+Gris foncé : ![sample](https://cdn.jokerly.com/images/play_btn_darkgray_small.png) https://cdn.jokerly.com/images/play_btn_darkgray_small.png
+Noir : ![sample](https://cdn.jokerly.com/images/play_btn_black_small.png) https://cdn.jokerly.com/images/play_btn_black_small.png
 Blanc : ![sample](https://cdn.jokerly.com/img/minilogo.png) https://cdn.jokerly.com/img/minilogo.png
 Noir : ![sample](https://cdn.jokerly.com/img/minilogo_noir.png) https://cdn.jokerly.com/img/minilogo_noir.png
 
