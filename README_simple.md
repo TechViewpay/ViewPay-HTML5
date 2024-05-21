@@ -23,39 +23,38 @@ vpScript.addEventListener('load', VPinitVideo);
 document.body.appendChild(divVPmodal);
 document.body.appendChild(vpScript);
 
-<script> 
-	function VPinitVideo(){
-		JKFBASQ.init({
-			site_id: 'b23d3f0235ae89e4', // id de démo fonctionnel
-			load_callback : VPexistAds,
-			noads_callback : VPnoAds,
-			complete_callback : VPcompleteAds,
-			close_callback : VPcloseAds,
-			play_callback : VPplayAds,
-			cover:false,
-		});
-	}
-	function VPexistAds(){
-		//fonction qui sera appelée lorsqu'au moins une publicité a été trouvée. Vous pouvez afficher un bouton dans un paywall par exemple.
-	}
-	function VPnoAds(){
-		//fonction qui sera appelée quand aucune publicité n'a été trouvée. Vous pouvez par exemple cacher le bouton, ou déclencher un autre process.
-	}
-	function VPloadAds(){
-		//fonction que vous lancez pour ouvrir ViewPay. Par exemple onclick sur un bouton "Regarder une publicité"
-    document.getElementById("VPmodal").style.display = "block";
-		JKFBASQ.loadAds();
-	}
-	function VPcompleteAds(){
-    //fonction appelée quand l'utilisateur aura complété un parcours ViewPay. Insérer ici le code nécessaire à l'obtention de l'article / du contenu.
-		document.getElementById("VPmodal").style.display = "none";
-	}
-	function VPcloseAds(){
-    //fonction appelée si l'utilisateur quitte le parcours ViewPay.
-		document.getElementById("VPmodal").style.display = "none";
-	}
-	function VPplayAds(){
-	}
+function VPinitVideo(){
+	JKFBASQ.init({
+		site_id: 'b23d3f0235ae89e4', // id de démo fonctionnel
+		load_callback : VPexistAds,
+		noads_callback : VPnoAds,
+		complete_callback : VPcompleteAds,
+		close_callback : VPcloseAds,
+		play_callback : VPplayAds,
+		cover:false,
+	});
+}
+function VPexistAds(){
+	//fonction qui sera appelée lorsqu'au moins une publicité a été trouvée. Vous pouvez afficher un bouton dans un paywall par exemple.
+}
+function VPnoAds(){
+	//fonction qui sera appelée quand aucune publicité n'a été trouvée. Vous pouvez par exemple cacher le bouton, ou déclencher un autre process.
+}
+function VPloadAds(){
+	//fonction que vous lancez pour ouvrir ViewPay. Par exemple onclick sur un bouton "Regarder une publicité"
+document.getElementById("VPmodal").style.display = "block";
+	JKFBASQ.loadAds();
+}
+function VPcompleteAds(){
+//fonction appelée quand l'utilisateur aura complété un parcours ViewPay. Insérer ici le code nécessaire à l'obtention de l'article / du contenu.
+	document.getElementById("VPmodal").style.display = "none";
+}
+function VPcloseAds(){
+//fonction appelée si l'utilisateur quitte le parcours ViewPay.
+	document.getElementById("VPmodal").style.display = "none";
+}
+function VPplayAds(){
+}
 </script>
 ```
 
