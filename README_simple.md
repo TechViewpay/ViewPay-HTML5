@@ -130,7 +130,6 @@ ViewPay est une solution qui répond aux appels reçus avec agilité et rapidit�
 Nous vous conseillons d'adapter le wording du bouton ViewPay au mieux par rapport au contexte dans lequel il est intégré.
 
 Voici un exemple de bouton d’appel à ViewPay dans la Presse :
-Presse Bleu arrondi « Je » :
 ![sample](https://cdn.jokerly.com/images/logosVP/Bouton_arrondi_bleu_presse_je.png)
 
 Nous conseillons également d'intégrer un picto ViewPay à votre bouton, pour susciter de l'intérêt chez l'utilisateur.
