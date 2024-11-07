@@ -137,10 +137,10 @@ Exemple de bouton ViewPay dans un jeu :
 Nous conseillons également d'intégrer un élément visuel comme un picto ViewPay ou un bouton "Play" à votre bouton, pour susciter de l'intérêt chez l'utilisateur.
 Voici des pictos que que nous mettons à votre disposition : 
 
-Blanc : ![sample](https://cdn.jokerly.com/images/play_btn_white_small.png) https://cdn.jokerly.com/images/play_btn_white_small.png  
-Gris clair : ![sample](https://cdn.jokerly.com/images/play_btn_lightgray_small.png) https://cdn.jokerly.com/images/play_btn_lightgray_small.png  
-Gris foncé : ![sample](https://cdn.jokerly.com/images/play_btn_darkgray_small.png) https://cdn.jokerly.com/images/play_btn_darkgray_small.png  
-Noir : ![sample](https://cdn.jokerly.com/images/play_btn_black_small.png) https://cdn.jokerly.com/images/play_btn_black_small.png  
+Blanc : ![sample](https://cdn.jokerly.com/images/play_btn_white_small.svg) https://cdn.jokerly.com/images/play_btn_white_small.svg  
+Gris clair : ![sample](https://cdn.jokerly.com/images/play_btn_lightgray_small.svg) https://cdn.jokerly.com/images/play_btn_lightgray_small.svg  
+Gris foncé : ![sample](https://cdn.jokerly.com/images/play_btn_darkgray_small.svg) https://cdn.jokerly.com/images/play_btn_darkgray_small.svg  
+Noir : ![sample](https://cdn.jokerly.com/images/play_btn_black_small.svg) https://cdn.jokerly.com/images/play_btn_black_small.svg  
 Blanc : ![sample](https://cdn.jokerly.com/img/minilogo.png) https://cdn.jokerly.com/img/minilogo.png  
 Noir : ![sample](https://cdn.jokerly.com/img/minilogo_noir.png) https://cdn.jokerly.com/img/minilogo_noir.png  
 
