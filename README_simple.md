@@ -96,6 +96,7 @@ Voici donc le CSS à mettre dans votre page :
 	}
 }
 #VPmodal{
+    top: 0;
     width: 100%;
     height: 100%;
     display: none;
