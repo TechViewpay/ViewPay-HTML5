@@ -17,7 +17,7 @@ divCadreJokerlyADS.setAttribute('id', 'cadreJokerlyADS');
 divVPmodal.appendChild(divCadreJokerlyADS);
 
 const vpScript = document.createElement('script');
-vpScript.src = 'https://cd.jokerly.com/scripts/jkFbASQ.js';
+vpScript.src = 'https://cdn.jokerly.com/scripts/jkFbASQ.js';
 vpScript.defer = true;
 vpScript.addEventListener('load', VPinitVideo);
 document.body.appendChild(divVPmodal);
