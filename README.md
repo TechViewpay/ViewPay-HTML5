@@ -9,7 +9,7 @@ Voici un exemple de déblocage d'article avec Viewpay :
 
 ## Chargement du Javascript
 ```javascript
-<script type="text/javascript" src="//cdn.jokerly.com/scripts/jkFbASQ.js"></script> 
+<script type="text/javascript" src="https://cdn.jokerly.com/scripts/jkFbASQ.js"></script> 
 ```
 Le fichier jkFbASQ.js est le seul fichier qui doit être chargé dans la page qui va accueillir Viewpay (page affichant le paywall). Ce fichier est servi par notre CDN, pour vous garantir d'avoir toujours la dernière version.
 
@@ -57,6 +57,7 @@ Voici donc le CSS à mettre dans votre page :
 	}
 }
 #VPmodal{
+    top: 0;
     width: 100%;
     height: 100%;
     display: none;
@@ -64,9 +65,9 @@ Voici donc le CSS à mettre dans votre page :
     background-color: rgba(0, 0, 0, 0.85);
     z-index: 9999999 !important;
 }
-//Le z-index est nécessaire à la visibilité de la publicité. 
-//Il est impératif de le monter si nécessaire si une frame/bannière/autre est au dessus du nôtre.
-//Ceci est obligatoire afin de garantir de CPM élevé.
+/* Le z-index est nécessaire à la visibilité de la publicité.
+   Il est impératif de le monter si nécessaire si une frame/bannière/autre est au dessus du nôtre.
+   Ceci est obligatoire afin de garantir de CPM élevé. */
 ```
 
 Si vous souhaitez modifier l'une de ces données, n'hésitez pas à contacter votre contact ViewPay
@@ -106,7 +107,7 @@ Voici le code à intégrer dans une balise script :
 		
 	function VPexistAds(){
 		console.log("existAds");
-		document.getElementById("btnShowViewpay").style.display = "block";
+		document.getElementById("btnShowViewPay").style.display = "block";
 	}
 	function VPloadAds(){
 		console.log("loadAds");
@@ -114,7 +115,7 @@ Voici le code à intégrer dans une balise script :
 		JKFBASQ.loadAds();
 	}
 	function VPnoAds(){
-		document.getElementById("btnShowViewpay").style.display = "none";
+		document.getElementById("btnShowViewPay").style.display = "none";
 		console.log("noAds");
 	}
 	function VPcompleteAds(){
@@ -165,7 +166,7 @@ background: url(https://cdn.jokerly.com/img/minilogo.png) 10px center no-repeat;
 ```
 
 ### Optimisation du chargement du bouton ViewPay
-Il est primordial d’optimiser la vitesse d’affichage du bouton Viewpay, pour maximiser le taux de clic sur le bouton et donc les revenus générés. Il faut donc s’assurer d’appeler VpInit() le plus tôt possible, pour que la disponibilité de la pub soit déjà connue au moment d’afficher votre paywall.
+Il est primordial d’optimiser la vitesse d’affichage du bouton Viewpay, pour maximiser le taux de clic sur le bouton et donc les revenus générés. Il faut donc s’assurer d’appeler VPinitVideo() le plus tôt possible, pour que la disponibilité de la pub soit déjà connue au moment d’afficher votre paywall.
 
 Malgré cela, comme le chargement des pages fait souvent appel à une multitudes de process (pubs, contenus, analytics…), il peut arriver que la réponse arrive après l’affichage du paywall : le risque est alors que l’utilisateur quitte la page avant même que le bouton soit affiché…
 
@@ -176,7 +177,7 @@ La logique est la suivante :
 - On vérifie s'il y a des publicités disponibles, 
 	- Si Oui (VPexistAds())
 		- Le bouton change de wording et devient cliquable
-	- Si Non (VPnoaAds())
+	- Si Non (VPnoAds())
 		- Le bouton disparaît ou le wording s'adapte pour expliquer qu'aucune publicité n'est disponible.
 
  Techniquement, il suffit de faire comme ceci :
@@ -188,14 +189,14 @@ Ensuite, il ne reste plus qu'à utiliser les callbacks pour appliquer le style e
 ```javascript
 function VPexistAds(){
 	var btnVp = document.getElementById("btnShowViewPay");
-	btnVp.style.backgroundColor = #1bbbec;
+	btnVp.style.backgroundColor = "#1bbbec";
 	btnVp.style.cursor = "pointer";
 	btnVp.textContent = "Je regarde une publicité";
-	btnVp.onclick = VPloadAds();
+	btnVp.onclick = VPloadAds;
 }
 ...
 function VPnoAds(){
-	var btnVP = document.getElementById("btnShowViewPay");
+	var btnVp = document.getElementById("btnShowViewPay");
 	btnVp.textContent = "Aucune publicité disponible.";
 }
 ```
@@ -214,4 +215,4 @@ La charte graphique du bouton ViewPay (longueur, bordure ....) peut être modifi
 Présenter le paywall le plus en haut possible de la page pour éviter le plus possible la nécessité de scroller pour rendre le bouton VP visible. Positionner le bouton Viewpay en première option (verticalement parlant) est préférable, pour la même raison.
 Chaque paywall est unique, alors discutons ensemble au moment de l’intégration pour optimiser au mieux le rendu!
 
-Si vous utilisez Bootstrap, nous avons remarqué que les modales de Bootstrap sont par défaut affichées avec un délai de 0.15 secondes. Pour corriger ce problème dans un site Bootstrap, il suffit de lancer VPLoadAds dans un setTimeout d’au minimum 0.15s.
+Si vous utilisez Bootstrap, nous avons remarqué que les modales de Bootstrap sont par défaut affichées avec un délai de 0.15 secondes. Pour corriger ce problème dans un site Bootstrap, il suffit de lancer VPloadAds dans un setTimeout d’au minimum 0.15s.

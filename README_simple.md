@@ -18,7 +18,6 @@ divVPmodal.appendChild(divCadreJokerlyADS);
 
 const vpScript = document.createElement('script');
 vpScript.src = 'https://cdn.jokerly.com/scripts/jkFbASQ.js';
-vpScript.defer = true;
 vpScript.addEventListener('load', VPinitVideo);
 document.body.appendChild(divVPmodal);
 document.body.appendChild(vpScript);
@@ -58,7 +57,7 @@ function VPplayAds(){
 </script>
 ```
 
-Ce bloc de code permet de charger le fichier jkFbASQ.js, qui est servi par notre CDN, pour vous garantir d'avoir toujours la dernière version. Il est chargé en "defer" pour ne pas ralentir le chargeemnt de votre page.
+Ce bloc de code permet de charger le fichier jkFbASQ.js, qui est servi par notre CDN, pour vous garantir d'avoir toujours la dernière version. Il est injecté dynamiquement, donc chargé de façon asynchrone, pour ne pas ralentir le chargement de votre page.
 Il crée également les emplacements pour accueillir la publicité, et définit les fonctions nécessaires à l'initialisation de ViewPay et qui vous permettent de gérer l'interaction avec ViewPay. 
 
 
@@ -136,7 +135,7 @@ Exemple de bouton ViewPay dans un jeu :
 ![sample](https://cdn.jokerly.com/img/exemple_btn_jeu.png)
 
 Nous conseillons également d'intégrer un élément visuel comme un picto ViewPay ou un bouton "Play" à votre bouton, pour susciter de l'intérêt chez l'utilisateur.
-Voici des pictos que que nous mettons à votre disposition : 
+Voici des pictos que nous mettons à votre disposition : 
 
 Blanc : ![sample](https://cdn.jokerly.com/images/play_btn_white_small.svg) https://cdn.jokerly.com/images/play_btn_white_small.svg  
 Gris clair : ![sample](https://cdn.jokerly.com/images/play_btn_lightgray_small.svg) https://cdn.jokerly.com/images/play_btn_lightgray_small.svg  
